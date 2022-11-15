@@ -1,6 +1,7 @@
 import unittest
 import flask_whiteapp
 
+
 class MyClassTest(unittest.TestCase):
     def setUp(self):
         pass

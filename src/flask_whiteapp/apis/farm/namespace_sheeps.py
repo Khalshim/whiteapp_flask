@@ -30,9 +30,9 @@ class SheepList(Resource):
 class Sheep(Resource):
     @api.doc("get_sheep")
     @api.marshal_with(sheep)
-    def get(self, id):
+    def get(self, l_id):
         """Fetch a sheep given its identifier"""
-        for sheep in SHEEPS:
-            if sheep["id"] == id:
-                return sheep
+        for l_sheep in SHEEPS:
+            if l_sheep["id"] == l_id:
+                return l_sheep
         api.abort(404)

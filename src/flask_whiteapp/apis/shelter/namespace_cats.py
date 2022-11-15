@@ -30,9 +30,9 @@ class CatList(Resource):
 class Cat(Resource):
     @api.doc("get_cat")
     @api.marshal_with(cat)
-    def get(self, id):
+    def get(self, l_id):
         """Fetch a cat given its identifier"""
-        for cat in CATS:
-            if cat["id"] == id:
-                return cat
+        for l_cat in CATS:
+            if l_cat["id"] == l_id:
+                return l_cat
         api.abort(404)

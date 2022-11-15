@@ -1,6 +1,4 @@
 from flask_restx import Namespace, Resource, fields
-import tomli
-from pathlib import Path
 
 api = Namespace("dogs", description="Dogs related operations")
 
@@ -32,9 +30,9 @@ class DogList(Resource):
 class Dog(Resource):
     @api.doc("get_dog")
     @api.marshal_with(dog)
-    def get(self, id):
+    def get(self, l_id):
         """Fetch a dog given its identifier"""
-        for dog in DOGS:
-            if dog["id"] == id:
-                return dog
+        for l_dog in DOGS:
+            if l_dog["id"] == l_id:
+                return l_dog
         api.abort(404)
